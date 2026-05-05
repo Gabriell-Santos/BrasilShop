@@ -1,7 +1,22 @@
-export function App() {
-  return (
-    <div className="flex h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold text-gray-800">Hello, World!</h1>
-    </div>
-  );
-}
+import { createBrowserRouter } from "react-router-dom";
+import { Layout } from "./Component/Layout";
+import { Home } from "./Pages/Home";
+import { Carts } from "./Pages/Carts";
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/carts",
+        element: <Carts />,
+      },
+    ],
+  },
+]);
+
+export { router };
