@@ -7,7 +7,7 @@ export function Header() {
         <nav className="w-full max-w-7xl flex  items-center justify-between mx-auto h-14 ">
           <Link
             to="/"
-            className="font-bold text-3xl  bg-gradient-to-r from-green-600 via-yellow-500 to-blue-700 bg-clip-text text-transparent"
+            className="font-bold text-3xl cursor-pointer  bg-gradient-to-r from-green-600 via-yellow-500 to-blue-700 bg-clip-text text-transparent"
           >
             BRASIL_SHOP
           </Link>
