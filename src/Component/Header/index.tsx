@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import { CartContext } from "../../Services/ContextApi/index";
+import { useContext } from "react";
 export function Header() {
+  const { quantityItems } = useContext(CartContext);
   return (
     <div>
       <header className="bg-gray-900 w-full p-2">
@@ -13,9 +16,11 @@ export function Header() {
           </Link>
           <Link className="mt-6 relative" to={"/carts"}>
             <FiShoppingCart size={24} color="white" />
-            <span className="bg-lime-600 flex items-center justify-center font-bold rounded-full text-white absolute -top-4 -right-3 text-xs w-5 h-5">
-              2
-            </span>
+            {quantityItems > 0 && (
+              <span className="bg-lime-600 flex items-center justify-center font-bold rounded-full text-white absolute -top-4 -right-3 text-xs w-5 h-5">
+                {quantityItems}
+              </span>
+            )}
           </Link>
         </nav>
       </header>
