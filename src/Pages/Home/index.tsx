@@ -1,16 +1,20 @@
 import api from "../../Services/Api";
 import { useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
+import { CartContext } from "../../Services/ContextApi";
+import { useContext } from "react";
+
+// Interface para definir o tipo dos produtos
+export interface ProdutoProps {
+  id: number;
+  cover: string;
+  title: string;
+  description: string;
+  price: number;
+}
 
 export function Home() {
-  // Interface para definir o tipo dos produtos
-  interface ProdutoProps {
-    id: number;
-    cover: string;
-    title: string;
-    description: string;
-    price: number;
-  }
+  const { addItemCart } = useContext(CartContext);
   const [produtos, setProdutos] = useState<ProdutoProps[]>([]);
 
   useEffect(() => {
@@ -20,6 +24,11 @@ export function Home() {
     }
     getProdutos();
   }, []);
+
+  // Adicionar ao carrinho
+  function AddItemCart(produto: ProdutoProps) {
+    addItemCart(produto);
+  }
 
   return (
     <div>
@@ -45,7 +54,7 @@ export function Home() {
                     currency: "BRL",
                   })}
                 </p>
-                <button className="p-2 ">
+                <button className="p-2 " onClick={() => AddItemCart(produto)}>
                   <BsCartPlus size={22} color="black" />
                 </button>
               </div>
