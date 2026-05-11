@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BsCartPlus } from "react-icons/bs";
 import { CartContext } from "../../Services/ContextApi";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 // Interface para definir o tipo dos produtos
 export interface ProdutoProps {
@@ -28,6 +29,7 @@ export function Home() {
   // Adicionar ao carrinho
   function AddItemCart(produto: ProdutoProps) {
     addItemCart(produto);
+    toast.success("Produto adicionado ao carrinho!");
   }
 
   return (
