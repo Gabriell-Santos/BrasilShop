@@ -3,6 +3,7 @@ import { FiPlus, FiMinus, FiTrash2 } from "react-icons/fi";
 import { CartContext } from "../../Services/ContextApi";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export function Carts() {
   const {
@@ -69,7 +70,10 @@ export function Carts() {
 
           <button
             className="text-red-400 hover:text-red-600 transition"
-            onClick={() => ButtonRemoveItemCart(item)}
+            onClick={() => {
+              ButtonRemoveItemCart(item);
+              toast.success("Produto removido do carrinho!");
+            }}
           >
             <FiTrash2 size={20} />
           </button>
