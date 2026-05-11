@@ -5,7 +5,13 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 export function Carts() {
-  const { cart } = useContext(CartContext);
+  const {
+    cart,
+    totalResult,
+    addItemCart,
+    removeItemCart,
+    ButtonRemoveItemCart,
+  } = useContext(CartContext);
   return (
     <div className="w-full max-w-7xl mx-auto mt-10 px-4">
       {cart.length === 0 ? (
@@ -39,11 +45,17 @@ export function Carts() {
           </div>
 
           <div className="flex items-center gap-3 border rounded-full px-3 py-1">
-            <button className="text-gray-500 hover:text-black transition">
+            <button
+              className="text-gray-500 hover:text-black transition"
+              onClick={() => removeItemCart(item)}
+            >
               <FiMinus size={16} />
             </button>
             <span className="w-5 text-center font-medium">{item.quantity}</span>
-            <button className="text-gray-500 hover:text-black transition">
+            <button
+              className="text-gray-500 hover:text-black transition"
+              onClick={() => addItemCart(item)}
+            >
               <FiPlus size={16} />
             </button>
           </div>
@@ -55,13 +67,16 @@ export function Carts() {
             })}
           </strong>
 
-          <button className="text-red-400 hover:text-red-600 transition">
+          <button
+            className="text-red-400 hover:text-red-600 transition"
+            onClick={() => ButtonRemoveItemCart(item)}
+          >
             <FiTrash2 size={20} />
           </button>
         </section>
       ))}
       {cart.length > 0 && (
-        <span className=" font-medium ">TOTAL: R$ 1.800,00</span>
+        <span className=" font-medium ">TOTAL: {totalResult} </span>
       )}
     </div>
   );
