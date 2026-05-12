@@ -4,6 +4,7 @@ import { BsCartPlus } from "react-icons/bs";
 import { CartContext } from "../../Services/ContextApi";
 import { useContext } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 // Interface para definir o tipo dos produtos
 export interface ProdutoProps {
@@ -17,6 +18,7 @@ export interface ProdutoProps {
 export function Home() {
   const { addItemCart } = useContext(CartContext);
   const [produtos, setProdutos] = useState<ProdutoProps[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getProdutos() {
@@ -42,6 +44,7 @@ export function Home() {
           {produtos.map((produto) => (
             <div key={produto.id} className="border rounded-lg p-4 shadow-md">
               <img
+                onClick={() => navigate(`/details/${produto.id}`)}
                 className="mb-4 w-full max-h-80 object-cover rounded-lg"
                 src={produto.cover}
                 alt="Logo do Produto"
