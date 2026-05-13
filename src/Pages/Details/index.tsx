@@ -39,11 +39,11 @@ export function Details() {
       </h2>
 
       {product && (
-        <section className="flex items-start gap-6 w-full max-w-2xl mt-7 ">
+        <section className="flex items-start gap-6 w-full max-w-2xl mt-7 sm:flex-row flex-col mb-3 ">
           {/* Imagem */}
           <div className="w-48 h-48 flex-shrink-0">
             <img
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg "
               src={product.cover}
               alt={product.title}
             />

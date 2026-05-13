@@ -40,9 +40,12 @@ export function Home() {
         <h2 className="text-center text-2xl font-bold">
           Confira Nossos Produtos!
         </h2>
-        <div className="mt-15 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="mt-10  w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-sm:px-4">
           {produtos.map((produto) => (
-            <div key={produto.id} className="border rounded-lg p-4 shadow-md">
+            <div
+              key={produto.id}
+              className="border rounded-lg p-4 shadow-md max-sm:mb-2.5"
+            >
               <img
                 onClick={() => navigate(`/details/${produto.id}`)}
                 className="mb-4 w-full max-h-80 object-cover rounded-lg"

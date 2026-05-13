@@ -16,7 +16,7 @@ export function Carts() {
   return (
     <div className="w-full max-w-7xl mx-auto mt-10 px-4">
       {cart.length === 0 ? (
-        <div className="mx-auto flex flex-col items-center justify-center gap-4">
+        <div className="mx-auto flex flex-col items-center justify-center gap-4 ">
           <h2 className="text-2xl font-semibold text-gray-700 mb-4">
             Seu carrinho está vazio
           </h2>
@@ -34,7 +34,7 @@ export function Carts() {
       {cart.map((item) => (
         <section
           key={item.id}
-          className="flex items-center justify-between border rounded-lg p-4 gap-4 shadow-sm mb-4"
+          className="flex items-center justify-between border rounded-lg p-4 gap-4 shadow-sm mb-4 sm:flex-row flex-col "
         >
           <div className="flex items-center gap-4">
             <img
@@ -80,7 +80,7 @@ export function Carts() {
         </section>
       ))}
       {cart.length > 0 && (
-        <span className=" font-medium ">TOTAL: {totalResult} </span>
+        <span className=" font-medium pb-3.5">TOTAL: {totalResult} </span>
       )}
     </div>
   );
