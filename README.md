@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# 🛍️ BrasilShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## E-commerce moderno desenvolvido com React + TypeScript
 
-Currently, two official plugins are available:
+![BrasilShop Banner](./imagem.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)](https://reactrouter.com/)
+[![JSON Server](https://img.shields.io/badge/JSON_Server-000000?style=for-the-badge&logo=json&logoColor=white)](https://github.com/typicode/json-server)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📖 Sobre o Projeto
 
-## Expanding the ESLint configuration
+**BrasilShop** é um e-commerce completo desenvolvido para demonstrar habilidades em **React com TypeScript**, gerenciamento de estado, consumo de API e criação de interfaces responsivas. O projeto simula uma loja online real onde usuários podem navegar por produtos, adicionar itens ao carrinho e visualizar o valor total da compra.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✨ **Diferenciais técnicos:**
+- Código 100% tipado com TypeScript
+- Componentes reutilizáveis e modularizados
+- Context API para gerenciamento global do carrinho
+- Feedback visual com sistema de notificações
+- Rotas protegidas e página 404 personalizada
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🎯 Funcionalidades Implementadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Funcionalidade | Descrição | Status |
+|---------------|-----------|--------|
+| 🏠 **Home** | Listagem de produtos consumidos de uma API mock | ✅ |
+| 🛒 **Carrinho** | Adicionar/remover produtos com atualização em tempo real | ✅ |
+| 💰 **Total automático** | Cálculo dinâmico do valor total do carrinho | ✅ |
+| 🔔 **Notificações** | Feedback visual para ações do usuário (Toast/Snackbar) | ✅ |
+| 🚫 **404 personalizada** | Página amigável para rotas não encontradas | ✅ |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tecnologias & Ferramentas
+
+### Front-end
+- **React 18** com Functional Components e Hooks
+- **TypeScript** - Tipagem estática e melhor manutenibilidade
+- **React Router DOM v6** - Navegação SPA
+- **Context API** - Gerenciamento de estado global do carrinho
+
+
+### Desenvolvimento
+- **Vite** - Build ultrarrápido e Hot Module Replacement (HMR)
+- **JSON Server** - API REST mock para desenvolvimento
+
+### Controle de Versão
+- **Git** - Versionamento semântico
+- **GitHub** - Repositório remoto
+
+---
+
+## 📦 Como Executar o Projeto
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Gabriell-Santos/BrasilShop.git
+
+# 2. Acesse a pasta
+cd BrasilShop
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie a API mock (JSON Server)
+npx json-server --watch db.json --port 3001
+
+# 5. Em outro terminal, inicie o front-end
+npm run dev
